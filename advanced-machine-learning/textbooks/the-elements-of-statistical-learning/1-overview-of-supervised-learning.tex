@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+%Packages%
+\usepackage{amsmath, parskip, bm}
+
+%Meta%
+\title{The Elements of Statistical Learning - Overview of Supervised Learning}
+\author{Diego ROJAS}
+
+%Shortcuts%
+\newcommand{\R}{{\rm I\!R}}
+\newcommand{\N}{{\rm I\!N}}
+\newcommand{\bx}{{\bm{x}}}
+\newcommand{\A}{{\bm{A}}}
+\newcommand{\B}{{\bm{B}}}
+\newcommand{\X}{{\bm{X}}}
+
+%Document%
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\textit{Supervised learning} aims at predicting the value of outputs based on the inputs.
+
+Input is synonym to \textit{predictors}, \textit{independent variables} and \textit{features}.
+
+Output is synonym to \textit{responses} and \textit{dependent variables}.
+
+\section{Variable Types and Terminology}
+
+Variables can be \textit{qualitative} (also called \textit{factors}, \textit{discrete} or \textit{categorical}) or \textit{quantitative}.
+
+\textit{Regression} is when we predict quantitative outputs. \textit{Classification} is when we predict qualitative outputs.
+
+Variables can also be \textit{ordered categorical} such as $small$, $medium$, $large$.
+
+Qualitative variables are often encoded into numeric values which are referred to as \textit{targets}.
+
+Inputs are denoted by $X$, quantitative outputs by $Y$, qualitative outputs by $G$.
+
+The $i$th observed value from the vector $X$ is denoted as $x_i$ (where $x_i$ is a scalar or a vector).
+
+The learning task is hence defined as follows: given the value of $X$, make a good prediction of the output $Y$, denoted $\hat{Y}$.
+
+\section{Two Simple Approaches to Prediction}
+
+\subsection{Linear Models and Least Squares}
+
+The linear model is defined as follows:
+
+$$
+\hat{Y} = \hat{\beta}_0 \ + \sum\limits_{j=1}^p X_j \hat{\beta}_j
+$$
+%
+Where $\hat{\beta}_0$ is the \textit{intercept} or \textit{bias}. If we include $\hat{\beta}_0$ in $\hat{\beta}$ and include $1$ in $X$ the model can be expressed as an inner product:
+%
+$$
+\hat{Y} = X^\top \hat{\beta}
+$$
+%
+One way of fitting this model over a set of training data $\X^{N \times p}$ of size $N$ consists in minimising the $RSS$ (\textit{residual sum of squares}) loss function defined as:
+%
+$$
+RSS(\beta) = (\bm{y} - \X \beta)^\top (\bm{y} - \X \beta)
+$$
+%
+Where $\bm{y}$ is a vector of the outputs in the training set. We can differentiate w.r.t $\beta$ and obtain:
+%
+$$
+\X^\top (\bm{y} - \X \beta) = 0
+$$
+%
+Then, if $\X^\top\X$ is nonsingular, the unique solution is given by:
+%
+$$
+\hat{\beta} = (\X^\top\X)^{-1}\X^\top\bm{y}
+$$
+%
+Therefore $\hat{y}_i$ is given by $x^\top_{i} \hat{\beta}$.
+
+\subsection{Nearest Neighbour Methods}
+
+The nearest neighbour methods, look at the observations in the training set $\mathcal{T}$ which are closest to $x$ to form $\hat{Y}$. Specifically, the $k$ nearest neighbours.
+%
+$$
+\hat{Y}(x) = \frac{1}{k} \sum\limits_{x_i \in N_k(x)} y_i
+$$
+In high-dimensional spaces, the distance kernels are modified to emphasize some variables more than others.
+
+\subsection{From Least Squares to Nearest Neighbours}
+
+\section{Statistical Decision Theory}
+
+\section{Local Methods in High Dimension}
+
+\section{Statistical Models, Supervised Learning and Function Approximation}
+
+\subsection{A Statistical Model for the Joint Distribution $Pr(X, Y)$}
+
+\subsection{Supervised Learning}
+
+\subsection{Function Approximation}
+
+\section{Structured Regression Models}
+
+\subsection{Difficulty of the Problem}
+
+\section{Classes for Restricted Estimators}
+
+\subsection{Roughness Penalty and Bayesian Methods}
+
+\subsection{Kernel Methods and Local Regression}
+
+\subsection{Basis Function and Dictionary Methods}
+
+\section{Model Selection and Bias-Variance Tradeoff}
+
+\end{document}
