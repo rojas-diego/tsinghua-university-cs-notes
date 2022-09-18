@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 
 %Packages%
-\usepackage{graphicx, parskip}
+\usepackage{graphicx, parskip, amsmath}
 \usepackage[export]{adjustbox}
 
 %Meta%
@@ -17,18 +17,115 @@
 
 \subsection{Relational Database Concepts}
 
-\subsection{Normalization}
+A \textit{relational database} is a structured collection of data in the form of tables.
+
+A \textit{relation} $R$ defined over $n$ sets $D_1, D_2, \dots, D_n$ is a set of \textit{n-tuples} $\langle d_1, d_2, \dots, d_n \rangle$ such that $d_1 \in D_1, d_2 \in D_2, \dots, d_n \in D_n$.
+
+\textit{Relation schemas} are definitions of the \textit{attributes}, \textit{entities} and relations of a database.
+%
+\begin{equation}
+\begin{aligned}
+	& \text{EMP(\underline{ENO}, ENAME, TITLE, SAL, \underline{PNO}, RESP DUR)} \\
+	& \text{PROJ(\underline{PNO}, PNAME, BUDGET)}
+\end{aligned}
+\end{equation}
+
+The \textit{key} of a relation is the minimum non-empty subset of its attributes which uniquely identify each tuple of the relation.
+
+The number of attributes of a relation defines its \textit{degree}, whereas the number of tuples of the relation defines its \textit{cardinality}. 
+
+\subsection{Normalisation}
+
+\textit{Normalisation} aims to eliminate various undesirable anomalies of a relation.
+
+\begin{itemize}
+	\item \textit{Repetition anomaly}
+	\item \textit{Update anomaly}
+	\item \textit{Insertion anomaly}
+	\item \textit{Deletion anomaly}
+\end{itemize}
+
+A relation with any of the aforementioned anomalies is split into two or more relations of a higher \textit{normal form}.
 
 \subsection{Relational Data Languages}
 
+Query languages for relational databases fall into two fundamental groups: \textit{relational algebra} and \textit{relational calculus}.
+
+\subsubsection{Relational Algebra}
+
+Comprised of the following fundamental operators:
+\begin{itemize}
+	\item \textit{Selection}
+	\item \textit{Projection}
+	\item \textit{Union}
+	\item \textit{Set difference}
+	\item \textit{Cartesian product}
+\end{itemize}
+
+From the set of fundamental operators we can derive:
+\begin{itemize}
+	\item \textit{Intersection}
+	\item \textit{$\theta \ -$ join}
+	\item \textit{Natural join}
+	\item \textit{Semijoin}
+	\item \textit{Division}
+\end{itemize}
+
+And much more.
+
+\subsection{Relational Calculus}
+
+Relational calculus languages describe what the result should be by stating the relationships that are supposed to hold for that result. SQL is a great example of a relational calculus query language. 
+
 \section{Review of Computer Networks}
+
+A \textit{computer network} is a set of interconnected and autonomous computers that exchange information.
+
+Computers on a network are referred to as \textit{hosts}, \textit{nodes}, \textit{end systems} or \textit{sites}.
+
+Computers on a network are connected using \textit{switches} that route messages through the network.
+
+The most commonly used network is the internet which can be defined as a network of networks.
 
 \subsection{Types of Networks}
 
+\subsubsection{Scale}
+
+The \textit{scale} of a network refers to its geographic distribution.
+
+\subsubsection{Topology}
+
+The \textit{topology} (or \textit{interconnection structure}) of a network refers to the way nodes are connected to one another.
+
+Common network topologies include.
+\begin{itemize}
+	\item \textit{Irregular}
+	\item \textit{Star}
+	\item \textit{Bus}
+	\item \textit{Ring}
+	\item \textit{Complete} (or \textit{mesh})
+\end{itemize}
+
 \subsection{Communication Schemes}
+
+Either \textit{unicast} or \textit{broadcast} (optionally \textit{multicasting}).
 
 \subsection{Data Communication Concepts}
 
+Data is transmitted through \textit{links} that carry one or more \textit{channels}.
+
+Each communication channel has a \textit{capacity} often called \textit{bandwidth}. Usually it is expressed as bits-per-second (bps) within digital links.
+
+The \textit{data transfer rate} represents the rate at which data is transmitted across the network. It is usually less than the capacity of the network due to possible errors during transmission (messages that are truncated, corrupted or lost).
+
+Messages are usually split into \textit{packets}. Their size is usually dependent on the frame size.
+
 \subsection{Communication Protocols}
+
+Error-free, reliable and efficient communication between hosts requires the implementation of elaborate software systems that are generally called \textit{protocols}.
+
+Protocols are often stacked in what is called a \textit{protocol suite/stack}.
+
+The most commonly used protocols are \textit{TCP} and \textit{UDP}.
 
 \end{document}
