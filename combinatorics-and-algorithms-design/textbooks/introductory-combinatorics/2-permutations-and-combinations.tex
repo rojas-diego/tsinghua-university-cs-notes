@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 
 %Packages%
-\usepackage{amsmath, bm}
+\usepackage{amsmath, bm, parskip}
 
 %Meta%
 \title{Introductory Combinatorics - Permutations and Combinations}
@@ -59,9 +59,9 @@ $$
 
 \section{Permutations of Sets}
 
-We denote $P(n, r)$ the number of $r-permutations$ of a set of $n$ elements.
-\\\\
-Given $n$ and $r$ are positive integers with $n \geq r$,
+We denote $P(n, r)$ the number of \textit{r-permutations} of a set of $n$ elements.
+
+The number of \textit{linear} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by:
 %
 $$
 P(n, r) = n \times (n - 1) \times \cdots \times (n - r + 1)
@@ -70,10 +70,36 @@ $$
 Which can be written as:
 %
 $$
-P(n, r) = \frac{n!}{(n - r)!}
+P(n, r) = \frac{n!}{(n - r)!}, \ P(n, n) = n!
+$$
+
+The number of \textit{circular} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by:
+
+$$
+\frac{P(n, r)}{r} = \frac{n!}{r \cdot (n - r)!}, \ P(n, n) =  (n - 1)!
 $$
 
 \section{Combinations (Subsets) of Sets}
+
+A \textit{combination} or \textit{subset} of a set $S$ denotes an unordered selection of the elements of $S$.
+%
+We denote by $\binom n r$ the number of $r$-subsets of a set $S$ of size $n$.
+%
+$$
+\binom n r = C(n, r) = \frac{n!}{r! (n - r)!}
+$$
+
+According to \textit{Pascal's formula}, for all integers $n$ and $k$ with $1 \leq k \leq n - 1$:
+%
+$$
+\binom n k = \binom{n - 1}{k} + \binom{n - 1}{k - 1}
+$$
+
+It stands that for $n > 0$:
+%
+$$
+\binom n 0 + \binom n 1 + \cdots + \binom n n = 2^n
+$$
 
 \section{Permutations of Multisets}
 
