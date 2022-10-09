@@ -2,6 +2,7 @@
 
 %Packages%
 \usepackage{amsmath, bm, parskip}
+\usepackage{hyperref}
 
 %Meta%
 \title{Introductory Combinatorics - Permutations and Combinations}
@@ -11,6 +12,8 @@
 \begin{document}
 
 \maketitle
+
+\tableofcontents
 
 %Introduction%	
 \section{Four Basic Counting Principles}
@@ -61,49 +64,69 @@ $$
 
 We denote $P(n, r)$ the number of \textit{r-permutations} of a set of $n$ elements.
 
-The number of \textit{linear} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by:
+\textbf{Linear permutations}: the number of \textit{linear} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by:
 %
-$$
-P(n, r) = n \times (n - 1) \times \cdots \times (n - r + 1)
-$$
-%
-Which can be written as:
-%
-$$
-P(n, r) = \frac{n!}{(n - r)!}, \ P(n, n) = n!
-$$
+\begin{equation}
+\begin{gathered}
+P(n, r) = n \times (n - 1) \times \cdots \times (n - r + 1) = P(n, r) = \frac{n!}{(n - r)!} \\
+P(n, n) = n!
+\end{gathered}
+\end{equation}
 
-The number of \textit{circular} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by:
-
-$$
+\textbf{Circular permutations}: the number of \textit{circular} $r$-permutations of a set of $n$ elements where $n \geq r$ is given by
+%
+\begin{equation}
 \frac{P(n, r)}{r} = \frac{n!}{r \cdot (n - r)!}, \ P(n, n) =  (n - 1)!
-$$
+\end{equation}
 
 \section{Combinations (Subsets) of Sets}
 
-A \textit{combination} or \textit{subset} of a set $S$ denotes an unordered selection of the elements of $S$.
+\textbf{Combination:} a \textit{combination} or \textit{subset} of a set $S$ denotes an unordered selection of the elements of $S$.
 %
 We denote by $\binom n r$ the number of $r$-subsets of a set $S$ of size $n$.
 %
-$$
+\begin{equation}
 \binom n r = C(n, r) = \frac{n!}{r! (n - r)!}
-$$
-
-According to \textit{Pascal's formula}, for all integers $n$ and $k$ with $1 \leq k \leq n - 1$:
+\end{equation}
 %
-$$
+It also stands that
+%
+\begin{equation}
+	\binom{n}{r} = \binom{n}{n - r}
+\end{equation}
+
+
+\textbf{Pascal's formula:} for all integers $n$ and $k$ with $1 \leq k \leq n - 1$:
+%
+\begin{equation}
 \binom n k = \binom{n - 1}{k} + \binom{n - 1}{k - 1}
-$$
+\end{equation}
 
-It stands that for $n > 0$:
+\textbf{Theorem:} for $n > 0$:
 %
-$$
+\begin{equation}
 \binom n 0 + \binom n 1 + \cdots + \binom n n = 2^n
-$$
+\end{equation}
 
 \section{Permutations of Multisets}
 
+\textbf{Infinite repetition:} the number of $r$-permutations of $k$ distinct objects, each available in unlimited supply (or if $r \leq \text{supply}$), equals $k^r$.
+
+\textbf{Finite repetition:} for a set $S$ with k elements repeated $n_1, n_2, \cdots n_k$ times, the number of permutations is given by
+%
+\begin{equation}
+	\frac{n!}{n_1!n_2! \cdots n_k!}
+\end{equation}
+%
+Note there are no easy formula for the case $n < r$.
+
 \section{Combinations of Multisets}
+
+\textbf{Infinite repetition:} Let $S$ be a multiset with objects of $k$ types, each with an infinite repetition number (or at least $r$). Then the number of $r$-combinations of $S$ equals
+%
+\begin{equation}
+	\binom{r + k - 1}{r} = \binom{r + k - 1}{k - 1}
+\end{equation}
 
 \section{Finite Probability}
 
