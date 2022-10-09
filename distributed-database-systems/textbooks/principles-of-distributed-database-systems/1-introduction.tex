@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 
 %Packages%
-\usepackage{graphicx, parskip}
+\usepackage{graphicx, parskip, hyperref}
 \usepackage[export]{adjustbox}
 
 %Meta%
@@ -12,6 +12,7 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
 \section{Distributed data processing}
 
@@ -89,7 +90,7 @@ Within a DDBS, data can be:
 	\item \textit{Partitioned} (or \textit{non-replicated}) where each node contains a disjoint subset of the data.
 \end{itemize}
 
-\textit{Fragmentation} refers to the separation of the database into partitions called \textit{fragments}.
+\textit{Fragmentation} refers to the separation of the database into partitions called \textit{fragments}. Fragmentation can be horizontal (\textit{selection}) or vertical (\textit{projection}).
 
 \textit{Distribution} is the optimum distribution of fragments.
 
@@ -140,7 +141,7 @@ The ANSI/SPARC architecture defines three views of a database:
 \begin{itemize}
 	\item \textit{External view} which is that of the end user.
 	\item \textit{Conceptual view} which is that of the database.
-	\item \textit{Internal view} which is that of the entreprise.
+	\item \textit{Internal view} which are the access paths and physical representation.
 \end{itemize}
 
 This provides the basis for data independence as one view can change without affecting the others. The separation of the external schemas from the conceptual schema enables \textit{logical data independence}, while the separation of the conceptual schema from the internal schema allows \textit{physical data independence}.
